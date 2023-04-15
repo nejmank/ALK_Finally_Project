@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import pl.alk.komputronik.pages.HomePage;
 import pl.alk.komputronik.utils.DriverFactory;
 import pl.alk.komputronik.utils.PropertiesLoader;
 
@@ -36,9 +37,11 @@ public class BaseTest {
     public void setup() throws IOException{
         String pageName = PropertiesLoader.loadProperty("page.name");
 
+
         driver = DriverFactory.getDriver();
         driver.manage().window().maximize();
         driver.get(pageName);
+
     }
 
     @AfterMethod

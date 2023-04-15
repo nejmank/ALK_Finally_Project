@@ -4,6 +4,7 @@ import com.aventstack.extentreports.model.Media;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.ExtentReports;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
