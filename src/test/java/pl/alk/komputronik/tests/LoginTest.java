@@ -1,9 +1,8 @@
-package pl.alk.mediaexpert.tests;
+package pl.alk.komputronik.tests;
 
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import pl.alk.mediaexpert.pages.HomePage;
+import pl.alk.komputronik.pages.HomePage;
 
 import java.io.IOException;
 

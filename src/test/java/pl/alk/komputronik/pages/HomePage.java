@@ -1,4 +1,4 @@
-package pl.alk.mediaexpert.pages;
+package pl.alk.komputronik.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

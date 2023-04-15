@@ -1,4 +1,4 @@
-package pl.alk.mediaexpert.utils;
+package pl.alk.komputronik.utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;

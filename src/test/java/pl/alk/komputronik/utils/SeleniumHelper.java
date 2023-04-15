@@ -1,4 +1,4 @@
-package pl.alk.mediaexpert.utils;
+package pl.alk.komputronik.utils;
 
 import com.aventstack.extentreports.model.Media;
 import org.apache.commons.io.FileUtils;

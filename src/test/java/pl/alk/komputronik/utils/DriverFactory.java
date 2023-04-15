@@ -1,4 +1,4 @@
-package pl.alk.mediaexpert.utils;
+package pl.alk.komputronik.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
