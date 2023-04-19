@@ -14,7 +14,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void invalidLoginTest() throws IOException {
-        ExtentTest test = extentReports.createTest("Invalid Login Test");
+        ExtentTest test = extentReports.createTest("Invalid Login Test", "Invalid login and password");
         HomePage homePage = new HomePage(driver);
 
         homePage.acceptCookie()

@@ -26,6 +26,9 @@ public class HomePage {
     @FindBy(xpath = "//p[contains(text(),'Nieprawidłowe logowanie.')]")
     private WebElement errorLoginMessage;
 
+    @FindBy(xpath = "//button[contains(text(),'Załóż konto')]")
+    private WebElement registerButton;
+
 
     private WebDriver driver;
     public HomePage(WebDriver driver){
@@ -61,6 +64,11 @@ public class HomePage {
     public WebElement getLoginErrorMessage(){
         SeleniumHelper.waitForElementToBeVisible(driver, errorLoginMessage);
         return errorLoginMessage;
+    }
+
+    public HomePage registerButtonClick(){
+        registerButton.click();
+        return this;
     }
 
 }

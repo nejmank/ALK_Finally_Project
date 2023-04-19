@@ -1,10 +1,10 @@
 package pl.alk.komputronik.utils;
 
+
 import com.aventstack.extentreports.model.Media;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.ExtentReports;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -40,9 +40,9 @@ public class SeleniumHelper {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void scrollDown(WebDriver driver){
-        Actions actions = new Actions(driver);
-        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+    public static void scrollDown(WebDriver driver, WebElement element){
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("argument[0].scrollIntoView(true);", element);
     }
 
     public static void scrollUp(WebDriver driver){
