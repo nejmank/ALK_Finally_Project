@@ -29,6 +29,9 @@ public class HomePage {
     @FindBy(xpath = "//button[contains(text(),'Załóż konto')]")
     private WebElement registerButton;
 
+    @FindBy(css = ".items-center.header-link-hidden")
+    private WebElement storehouseFindButton;
+
 
     private WebDriver driver;
     public HomePage(WebDriver driver){
@@ -68,6 +71,11 @@ public class HomePage {
 
     public HomePage registerButtonClick(){
         registerButton.click();
+        return this;
+    }
+
+    public HomePage storeHouseFindButtonClick(){
+        storehouseFindButton.click();
         return this;
     }
 
