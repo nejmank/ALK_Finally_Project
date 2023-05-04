@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pl.alk.komputronik.utils.SeleniumHelper;
 
 public class StoreHouseFindPage {
 
@@ -18,6 +19,9 @@ public class StoreHouseFindPage {
 
     @FindBy(xpath = "//button[@class='btn blue finally-v']")
     private WebElement showLocationButton;
+
+    @FindBy(xpath = "//div[contains(@class, 'points-list')]")
+    private WebElement nearbyStorehouseList;
 
     private WebDriver driver;
     public StoreHouseFindPage(WebDriver driver){
@@ -42,6 +46,11 @@ public class StoreHouseFindPage {
     public StoreHouseFindPage showLocationButtonClick(){
         showLocationButton.click();
         return this;
+    }
+
+    public WebElement storeHouseNearbyList(){
+        SeleniumHelper.waitForElementToBeVisible(driver,nearbyStorehouseList);
+        return nearbyStorehouseList;
     }
 
 }

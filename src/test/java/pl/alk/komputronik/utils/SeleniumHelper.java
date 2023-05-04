@@ -25,7 +25,7 @@ public class SeleniumHelper {
         int randomNumber = (int) (Math.random()* 1000);
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File file = screenshot.getScreenshotAs(OutputType.FILE);
-        String path = "/home/student/IdeaProjects/ALKProjektZaliczeniowy/src/test/resources/screenshots/screenshot"+randomNumber+".png";
+        String path = "/home/student/AquaProjects/ALK_Finally_Project/src/test/resources/screenshots/screenshot"+randomNumber+".png";
         FileUtils.copyFile(file, new File(path));
         return path;
     }

@@ -10,6 +10,7 @@ import pl.alk.komputronik.utils.JavaUtils;
 import pl.alk.komputronik.utils.SeleniumHelper;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class StoreHouseFindTest extends BaseTest {
 
@@ -18,17 +19,22 @@ public class StoreHouseFindTest extends BaseTest {
         ExtentTest test = extentReports.createTest("Find your nearest store", "Use Latitude and Longitude");
         HomePage homePage = new HomePage(driver);
         StoreHouseFindPage storeHouseFindPage = new StoreHouseFindPage(driver);
-
-
+        String myIP = JavaUtils.getCurrentIP();
+        String location = Arrays.toString(JavaUtils.getLatLongFromIP(myIP));
 
         homePage.acceptCookie()
                 .storeHouseFindButtonClick();
 
-        test.log(Status.INFO, "Jesteśmy na stronie do wyszukiwania sklepu", SeleniumHelper.getScreenshot(driver));
-        Assert.assertEquals(storeHouseFindPage.getFindStoreHouseLabel().getText(), "Znajdź sklep");
 
-        storeHouseFindPage.setLocateMeInput("")
+        Assert.assertEquals(storeHouseFindPage.getFindStoreHouseLabel().getText(), "Znajdź sklep");
+        test.log(Status.INFO, "Jesteśmy na stronie do wyszukiwania sklepu", SeleniumHelper.getScreenshot(driver));
+
+        storeHouseFindPage.setLocateMeInput(location)
                 .showLocationButtonClick();
+
+        Assert.assertTrue(storeHouseFindPage.storeHouseNearbyList().isDisplayed());
+        test.log(Status.PASS, "Lista z dostępnymi sklepami została wyświetlona", SeleniumHelper.getScreenshot(driver));
+
 
     }
 

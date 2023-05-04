@@ -65,18 +65,10 @@ public class JavaUtils {
             // Pobranie danych o lokalizacji z obiektu JSON i zwrócenie ich w postaci Stringa
             BigDecimal latitude = jsonResponse.getBigDecimal("latitude");
             BigDecimal longitude = jsonResponse.getBigDecimal("longitude");
-            location = "Latitude: " + latitude + ", Longitude: " + longitude;
+            location = latitude + "," + longitude;
         } catch (IOException e) {
             e.printStackTrace();
         }
         return new String[]{location};
     }
-
-    public static void main(String[] args) throws IOException {
-        String ip = getCurrentIP().toString();
-        System.out.println(ip);
-        String location = Arrays.toString(getLatLongFromIP(ip));
-        System.out.println(location);
-    }
-
 }

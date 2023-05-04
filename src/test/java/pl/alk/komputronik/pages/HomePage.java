@@ -20,7 +20,7 @@ public class HomePage {
     @FindBy(xpath = "//button[contains(text(),'Zaloguj się')]")
     private WebElement loginButton;
 
-    @FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
+    @FindBy(xpath = "//*[@id='onetrust-accept-btn-handler']")
     private WebElement acceptCookieButton;
 
     @FindBy(xpath = "//p[contains(text(),'Nieprawidłowe logowanie.')]")
@@ -75,6 +75,7 @@ public class HomePage {
     }
 
     public HomePage storeHouseFindButtonClick(){
+        SeleniumHelper.waitForElementToBeVisible(driver,storehouseFindButton);
         storehouseFindButton.click();
         return this;
     }
