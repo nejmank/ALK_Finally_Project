@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class StoreHouseFindTest extends BaseTest {
 
     @Test
-    public void StoreHouseFindUsingLatitudeAndLongitude() throws IOException {
+    public void storeHouseFindUsingLatitudeAndLongitude() throws IOException {
         ExtentTest test = extentReports.createTest("Find your nearest store", "Use Latitude and Longitude");
         HomePage homePage = new HomePage(driver);
         StoreHouseFindPage storeHouseFindPage = new StoreHouseFindPage(driver);
@@ -35,7 +35,25 @@ public class StoreHouseFindTest extends BaseTest {
         Assert.assertTrue(storeHouseFindPage.storeHouseNearbyList().isDisplayed());
         test.log(Status.PASS, "Lista z dostępnymi sklepami została wyświetlona", SeleniumHelper.getScreenshot(driver));
 
+    }
 
+    @Test
+    public void storeHouseFindUsingCityName() throws IOException{
+        ExtentTest test = extentReports.createTest("Find your nearest store", "Use City Name");
+        HomePage homePage = new HomePage(driver);
+        StoreHouseFindPage storeHouseFindPage = new StoreHouseFindPage(driver);
+
+        homePage.acceptCookie()
+                .storeHouseFindButtonClick();
+
+        Assert.assertEquals(storeHouseFindPage.getFindStoreHouseLabel().getText(), "Znajdź sklep");
+        test.log(Status.INFO, "Jesteśmy na stronie do wyszukiwania sklepu", SeleniumHelper.getScreenshot(driver));
+
+        storeHouseFindPage.setLocateMeInput("Warszawa")
+                .showLocationButtonClick();
+
+        Assert.assertTrue(storeHouseFindPage.storeHouseNearbyList().isDisplayed());
+        test.log(Status.PASS, "Lista z dostępnymi sklepami została wyświetlona", SeleniumHelper.getScreenshot(driver));
     }
 
 }

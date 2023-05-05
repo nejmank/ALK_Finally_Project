@@ -56,13 +56,13 @@ public class RegistrationPage {
     }
 
     public RegistrationPage CompanyRulesTermsCheckboxClick(){
-        SeleniumHelper.scrollDown(driver, companyRulesTermsCheckbox);
+        SeleniumHelper.scrollIntoView(driver, companyRulesTermsCheckbox);
         companyRulesTermsCheckbox.click();
         return this;
     }
 
     public RegistrationPage registerAccountButtonClick(){
-        SeleniumHelper.scrollDown(driver, registerAccountButton);
+        SeleniumHelper.scrollIntoView(driver, registerAccountButton);
         registerAccountButton.click();
         return this;
     }

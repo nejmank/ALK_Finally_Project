@@ -40,9 +40,9 @@ public class SeleniumHelper {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void scrollDown(WebDriver driver, WebElement element){
+    public static void scrollIntoView(WebDriver driver, WebElement element){
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("argument[0].scrollIntoView(true);", element);
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public static void scrollUp(WebDriver driver){

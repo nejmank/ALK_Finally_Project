@@ -32,6 +32,11 @@ public class HomePage {
     @FindBy(css = ".items-center.header-link-hidden")
     private WebElement storehouseFindButton;
 
+    @FindBy(xpath = "//input[@id='wp-autocomplete']")
+    private WebElement searchInput;
+
+    @FindBy(xpath = "//button[@type='button']")
+    private WebElement searchButton;
 
     private WebDriver driver;
     public HomePage(WebDriver driver){
@@ -77,6 +82,17 @@ public class HomePage {
     public HomePage storeHouseFindButtonClick(){
         SeleniumHelper.waitForElementToBeVisible(driver,storehouseFindButton);
         storehouseFindButton.click();
+        return this;
+    }
+
+    public HomePage setSearchInput(String productName){
+        SeleniumHelper.waitForElementToBeVisible(driver , searchInput);
+        searchInput.sendKeys(productName);
+        return this;
+    }
+
+    public HomePage searchButtonClick(){
+        searchButton.click();
         return this;
     }
 
