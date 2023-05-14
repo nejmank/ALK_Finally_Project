@@ -16,8 +16,7 @@ public class SearchFilterPage {
     @FindBys({@FindBy(xpath = "//div[@class='mt-10-mobile']"), @FindBy(xpath = "//div[@class='tests-product-entry']")})
     private List<WebElement> productList;
 
-    @FindBy(xpath = "/html/body/ktr-site/div/div[2]/div/div/ktr-product-list/div/ktr-transclude" +
-            "/div[2]/div[2]/div[4]/div[1]/div[1]/div[4]/div[1]/button")
+    @FindBy(xpath = "//div[contains(@class, 'grow w-full md')]")
     private WebElement seeMoreButton;
 
     private WebDriver driver;
@@ -28,12 +27,12 @@ public class SearchFilterPage {
 
     public SearchFilterPage randomProductClick(){
         Random random = new Random();
-        int randomIndex = random.nextInt(productList.size());
+        int randomIndex = random.nextInt(productList.size()-1);
         WebElement product = productList.get(randomIndex);
 
-        SeleniumHelper.scrollIntoView(driver, product);
+        SeleniumHelper.scrollIntoView(driver, product.findElement(By.xpath("//div[contains(@class, 'grow w-full md')]")));
 
-        product.findElement(By.xpath(String.valueOf(seeMoreButton))).click();
+        product.findElement(By.xpath("//div[contains(@class, 'grow w-full md')]")).click();
         return this;
     }
 
