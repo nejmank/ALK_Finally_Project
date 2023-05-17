@@ -38,6 +38,9 @@ public class HomePage {
     @FindBy(xpath = "//button[@type='button']")
     private WebElement searchButton;
 
+    @FindBy(xpath = "/html/body/ktr-site/div/div[2]/div/div/div[8]/ktr-new-slider-with-scroll-transclude/div/div[2]/section/div/ol/li[3]/div/a/p")
+    private WebElement configuratorPCButton;
+
     private WebDriver driver;
     public HomePage(WebDriver driver){
         PageFactory.initElements(driver, this);
@@ -93,6 +96,12 @@ public class HomePage {
 
     public HomePage searchButtonClick(){
         searchButton.click();
+        return this;
+    }
+
+    public HomePage configurationPCButtonClick(){
+        SeleniumHelper.scrollIntoView(driver , configuratorPCButton);
+        configuratorPCButton.click();
         return this;
     }
 

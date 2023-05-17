@@ -41,9 +41,23 @@ public class SeleniumHelper {
     }
 
     public static void scrollIntoView(WebDriver driver, WebElement element){
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'center'});", element);
     }
+
+    public static void waitForElementToBeClickable(WebDriver driver, WebElement element){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void scrollDownIfElement1IsOverlappingElement2(WebDriver driver, WebElement element1, WebElement element2){
+        if (element1.isDisplayed() && element2.isDisplayed()){
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,200)");
+        }
+    }
+
+
 
     public static void scrollUp(WebDriver driver){
         Actions actions = new Actions(driver);
