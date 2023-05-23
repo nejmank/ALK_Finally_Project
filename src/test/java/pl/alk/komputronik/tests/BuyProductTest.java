@@ -2,6 +2,7 @@ package pl.alk.komputronik.tests;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pl.alk.komputronik.pages.HomePage;
 import pl.alk.komputronik.pages.SearchFilterPage;
@@ -22,7 +23,7 @@ public class BuyProductTest extends BaseTest{
                 .setSearchInput("AMD Ryzen 7")
                 .searchButtonClick();
 
-        //Dodanie asercji sprawdzającej czy jesteśmy na stronie z wynikami
+        //Asercja
         test.log(Status.INFO, "Jesteśmy na stronie z wynikami", SeleniumHelper.getScreenshot(driver));
 
         searchFilterPage.randomProductClick();

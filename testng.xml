@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="KomputronikTest" verbose="1">
+    <test name="LoginTest" preserve-order="true" enabled="true">
+        <classes>
+            <class name="pl.alk.komputronik.tests.LoginTest"></class>
+        </classes>
+    </test>
+    <test name="RegisterTest" preserve-order="true" enabled="true">
+        <classes>
+            <class name="pl.alk.komputronik.tests.RegisterTest"></class>
+        </classes>
+    </test>
+    <test name="StoreHouseFindTest" preserve-order="true" enabled="true" >
+        <classes>
+            <class name="pl.alk.komputronik.tests.StoreHouseFindTest"></class>
+        </classes>
+    </test>
+</suite>
