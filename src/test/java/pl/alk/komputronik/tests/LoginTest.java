@@ -13,14 +13,14 @@ import java.io.IOException;
 public class LoginTest extends BaseTest {
 
     @Test
-    public void invalidLoginTest() throws IOException {
+    public void invalidLoginTest(String username, String password) throws IOException {
         ExtentTest test = extentReports.createTest("Invalid Login Test", "Invalid login and password");
         HomePage homePage = new HomePage(driver);
 
         homePage.acceptCookie()
                 .loggingButtonClick()
-                .enterLogin("TestowyLogin123")
-                .enterPassword("123ABC123")
+                .enterLogin(username)
+                .enterPassword(password)
                 .loginButtonClick();
 
         test.log(Status.PASS, "Nie udało się zalogować!", SeleniumHelper.getScreenshot(driver));

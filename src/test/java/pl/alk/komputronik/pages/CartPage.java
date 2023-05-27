@@ -28,9 +28,8 @@ public class CartPage {
         return cartProductList;
     }
 
-    public CartPage goNextButtonClick(){
-        goNextButton.click();
-        return this;
+    public WebElement goNextButtonIsDisplayed(){
+        return goNextButton;
     }
 
     public CartPage buyWithoutLoginButtonClick(){

@@ -15,4 +15,14 @@
             <class name="pl.alk.komputronik.tests.StoreHouseFindTest"></class>
         </classes>
     </test>
+    <test name="BuyProductTest" preserve-order="true" enabled="true">
+        <classes>
+            <class name="pl.alk.komputronik.tests.BuyProductTest"></class>
+        </classes>
+    </test>
+    <test name="ConfigurationPCTest" preserve-order="true" enabled="true">
+        <classes>
+            <class name="pl.alk.komputronik.tests.ConfigurationPCTest"></class>
+        </classes>
+    </test>
 </suite>

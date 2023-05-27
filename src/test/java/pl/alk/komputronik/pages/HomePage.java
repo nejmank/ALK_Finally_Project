@@ -1,5 +1,6 @@
 package pl.alk.komputronik.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,9 +35,6 @@ public class HomePage {
 
     @FindBy(xpath = "//input[@id='wp-autocomplete']")
     private WebElement searchInput;
-
-    @FindBy(xpath = "//button[@type='button']")
-    private WebElement searchButton;
 
     @FindBy(xpath = "/html/body/ktr-site/div/div[2]/div/div/div[8]/ktr-new-slider-with-scroll-transclude/div/div[2]/section/div/ol/li[3]/div/a/p")
     private WebElement configuratorPCButton;
@@ -91,11 +89,7 @@ public class HomePage {
     public HomePage setSearchInput(String productName){
         SeleniumHelper.waitForElementToBeVisible(driver , searchInput);
         searchInput.sendKeys(productName);
-        return this;
-    }
-
-    public HomePage searchButtonClick(){
-        searchButton.click();
+        searchInput.sendKeys(Keys.ENTER);
         return this;
     }
 
