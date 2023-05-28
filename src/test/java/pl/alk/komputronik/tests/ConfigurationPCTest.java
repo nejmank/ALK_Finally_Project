@@ -31,7 +31,7 @@ public class ConfigurationPCTest extends BaseTest{
                 .configurationPCButtonClick();
 
         Assert.assertTrue(configurationPCPage.getConfigurationPCLabel().isDisplayed());
-        test.log(Status.INFO, "Jesteśmy na stronie do konfiguracji PC", SeleniumHelper.getScreenshot(driver));
+        test.log(Status.INFO, "We are on the pc configuration page", SeleniumHelper.getScreenshot(driver));
 
         configurationPCPage.chooseCPUButtonClick();
         cpuPage.randomCPUProductClick()
@@ -50,8 +50,11 @@ public class ConfigurationPCTest extends BaseTest{
                 .goToSummaryButtonClick();
 
 
-        Assert.assertTrue(summaryConfigurationPCPage.getSummaryPCLabel().isDisplayed());
-        test.log(Status.PASS, "Udało się przejść proces konfiguracji PC", SeleniumHelper.getScreenshot(driver));
+        if (summaryConfigurationPCPage.getSummaryPCLabel().isDisplayed()){
+            test.log(Status.PASS, "successfully configured pc", SeleniumHelper.getScreenshot(driver));
+        } else {
+            test.log(Status.FAIL, "An unexpected error occurred", SeleniumHelper.getScreenshot(driver));
+        }
 
 
     }

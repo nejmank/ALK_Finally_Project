@@ -27,14 +27,14 @@ public class BuyProductTest extends BaseTest{
                 .setSearchInput("AMD Ryzen 7");
 
 
-        test.log(Status.INFO, "Jesteśmy na stronie z wynikami", SeleniumHelper.getScreenshot(driver));
+        test.log(Status.INFO, "We're on the results page", SeleniumHelper.getScreenshot(driver));
 
         searchFilterPage.randomProductClick();
         productPage.addToCartButtonClick()
                 .goToCartButtonClick();
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.komputronik.pl/cart");
-        test.log(Status.PASS, "Dodaliśmy produkt do koszyka", SeleniumHelper.getScreenshot(driver));
+        test.log(Status.PASS, "We have added the product to the cart", SeleniumHelper.getScreenshot(driver));
         Assert.assertTrue(cartPage.goNextButtonIsDisplayed().isDisplayed());
 
     }

@@ -27,13 +27,13 @@ public class StoreHouseFindTest extends BaseTest {
 
 
         Assert.assertEquals(storeHouseFindPage.getFindStoreHouseLabel().getText(), "Znajdź sklep");
-        test.log(Status.INFO, "Jesteśmy na stronie do wyszukiwania sklepu", SeleniumHelper.getScreenshot(driver));
+        test.log(Status.INFO, "We are on the shop search page", SeleniumHelper.getScreenshot(driver));
 
         storeHouseFindPage.setLocateMeInput(location)
                 .showLocationButtonClick();
 
         Assert.assertTrue(storeHouseFindPage.storeHouseNearbyList().isDisplayed());
-        test.log(Status.PASS, "Lista z dostępnymi sklepami została wyświetlona", SeleniumHelper.getScreenshot(driver));
+        test.log(Status.PASS, "The list with available stores has been displayed", SeleniumHelper.getScreenshot(driver));
 
     }
 
@@ -47,13 +47,13 @@ public class StoreHouseFindTest extends BaseTest {
                 .storeHouseFindButtonClick();
 
         Assert.assertEquals(storeHouseFindPage.getFindStoreHouseLabel().getText(), "Znajdź sklep");
-        test.log(Status.INFO, "Jesteśmy na stronie do wyszukiwania sklepu", SeleniumHelper.getScreenshot(driver));
+        test.log(Status.INFO, "We are on the shop search page", SeleniumHelper.getScreenshot(driver));
 
         storeHouseFindPage.setLocateMeInput("Warszawa")
                 .showLocationButtonClick();
 
         Assert.assertTrue(storeHouseFindPage.storeHouseNearbyList().isDisplayed());
-        test.log(Status.PASS, "Lista z dostępnymi sklepami została wyświetlona", SeleniumHelper.getScreenshot(driver));
+        test.log(Status.PASS, "The list with available stores has been displayed", SeleniumHelper.getScreenshot(driver));
     }
 
 }

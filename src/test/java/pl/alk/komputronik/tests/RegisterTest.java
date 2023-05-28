@@ -22,7 +22,7 @@ public class RegisterTest extends BaseTest{
                 .loggingButtonClick()
                 .registerButtonClick();
 
-        test.log(Status.INFO, "Jesteśmy na stronie rejestracji", SeleniumHelper.getScreenshot(driver));
+        test.log(Status.INFO, "We are on registration page", SeleniumHelper.getScreenshot(driver));
         Assert.assertEquals(registrationPage.getRegisterNameLabel().getText(), "REJESTRACJA");
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.komputronik.pl/register");
 
@@ -32,7 +32,7 @@ public class RegisterTest extends BaseTest{
                 .CompanyRulesTermsCheckboxClick()
                 .registerAccountButtonClick();
 
-        test.log(Status.PASS, "Nie udało się zarejestrować", SeleniumHelper.getScreenshot(driver));
+        test.log(Status.PASS, "Registration Failed", SeleniumHelper.getScreenshot(driver));
         Assert.assertEquals(registrationPage.getRegisterErrorMessage(), "Potwierdź że nie jesteś robotem");
 
     }
