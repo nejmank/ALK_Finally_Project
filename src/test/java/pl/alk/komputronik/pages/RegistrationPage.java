@@ -20,7 +20,7 @@ public class RegistrationPage {
     @FindBy(xpath = "//input[@name='customer_postal_code']")
     private WebElement registerInputPostalCode;
 
-    @FindBy(xpath = "//input[@id='customer_company_rules_terms']")
+    @FindBy(xpath = "//span[contains(@ng-class, 'rules')]")
     private WebElement companyRulesTermsCheckbox;
 
     @FindBy(xpath = "//span[contains(text(),'Załóż konto')]")

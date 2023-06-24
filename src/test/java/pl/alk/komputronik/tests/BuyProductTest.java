@@ -2,6 +2,8 @@ package pl.alk.komputronik.tests;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pl.alk.komputronik.pages.CartPage;
@@ -31,7 +33,9 @@ public class BuyProductTest extends BaseTest{
 
         searchFilterPage.randomProductClick();
         productPage.addToCartButtonClick()
+                .noThanksButtonClick()
                 .goToCartButtonClick();
+
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.komputronik.pl/cart");
         test.log(Status.PASS, "We have added the product to the cart", SeleniumHelper.getScreenshot(driver));

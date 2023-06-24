@@ -76,6 +76,7 @@ public class HomePage {
     }
 
     public HomePage registerButtonClick(){
+        SeleniumHelper.waitForElementToBeVisible(driver, registerButton);
         registerButton.click();
         return this;
     }

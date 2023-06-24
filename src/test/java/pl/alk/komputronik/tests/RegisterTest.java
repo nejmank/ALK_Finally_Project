@@ -33,7 +33,7 @@ public class RegisterTest extends BaseTest{
                 .registerAccountButtonClick();
 
         test.log(Status.PASS, "Registration Failed", SeleniumHelper.getScreenshot(driver));
-        Assert.assertEquals(registrationPage.getRegisterErrorMessage(), "Potwierdź że nie jesteś robotem");
+        Assert.assertEquals(registrationPage.getRegisterErrorMessage().getText(), "Potwierdź że nie jesteś robotem");
 
     }
 
